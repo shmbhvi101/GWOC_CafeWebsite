@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Copperplate:wght@400&display=swap">
+    <style>
+ @font-face {
+    font-family: 'FlameBold';
+    src: url('fonts/flamebold.ttf') format('truetype'),
+         
+    font-weight: normal;
+    font-style: normal;
+}
+
+      h1 {
+    color: #c08e59; /* Change the color as needed */
+    font-family: 'FlameBold', 'Copperplate', 'Papyrus', fantasy; /* Add your custom font */
+    font-size: 60px; /* Adjust the font size as needed */
+    padding-top: 60px;
+    margin-top: 30px; /* Adjust the margin-top value as needed */
+    /* ... (other styles for h1) ... */
+}
+
+
+ 
+.slim-nav {
+        background-color: #e6b884; /* Light brown color */
+        padding: 6px; /* Adjust padding as needed */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1001; /* Ensure it's above the main navigation */
+        transition: padding 0.3s ease; /* Add smooth transition for padding */
+    }
+
+    .slim-scroll {
+        padding: 2px; /* Adjust padding for slim state */
+    }
+
+#home-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2; /* Adjust the z-index value */
+        pointer-events: none; /* Ensure that the video doesn't block interaction with other elements */
+    }
+.gallery-item img {
+            max-width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out; /* Add a smooth transition for the animation */
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.2); /* Increase the size on hover (adjust as needed) */
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8; /* Background color for the entire page */
+        }
+
+       /* ... (existing styles) ... */
+
+  nav {
+            background-color: transparent;
+            color: white;
+            padding: 22px;
+margin-bottom: 0px;
+            transition: background-color 0.5s ease;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+         }
+
+        nav.scrolled {
+            background-color: #a5774a;
+            height: auto; /* Set height to auto to prevent content shift */
+        }
+        
+
+.left-nav, .right-nav {
+    display: flex;
+    align-items: center;
+}
+
+.center-nav {
+            text-align: center;
+            margin-right: 25px; /* Adjust the margin as needed */
+        }
+nav a {
+    font-family:'FlameBold', 'Copperplate', 'Papyrus';
+    color: #4d331a;
+    text-decoration: none;
+    margin: 0 25px;
+    padding: 10px 20px;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    transition: color 0.3s ease;
+    font-size: 25px;
+    font-weight: bold; /* Increase font weight */
+}
+
+nav.scrolled a {
+    color: #4d331a; /* Adjust the color for the scrolled state */
+}
+
+/* Adjust the styles for the menu button */
+.menu-button {
+    background-color: transparent;
+    color: #4d331a;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    box-shadow: none;
+    font-size: 26px; /* Increase font size to 20px */
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-family: 'Baskerville', 'Papyrus', serif;
+    font-weight: bold; /* Increase font weight */
+}
+
+.menu-button:hover {
+    color: #c08e59;
+    transform: scale(1.05);
+}
+
+nav.scrolled .menu-button:hover {
+    color: #c08e59; /* Change the color for the hovered state in the scrolled mode */
+    transform: scale(1.05);
+}
+
+/* Adjust the styles for the right-nav items */
+.right-nav a {
+    font-family: 'Copperplate', 'Papyrus', fantasy;
+    color: #4d331a;
+    text-decoration: none;
+    margin: 0 17px;
+    padding: 10px 20px;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    transition: color 0.3s ease;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+nav.scrolled .right-nav a {
+    color: #4d331a; /* Adjust the color for the scrolled state */
+}
+
+/* Adjust the margin for the right-nav in the scrolled state */
+nav.scrolled .right-nav {
+    margin-right: 15px;
+}
+
+
+.logo {
+    max-height: 71px;
+    order: 0; 
+    box-shadow: none;
+}
+
+
+nav div {
+    display: flex;
+    align-items: center;
+}
+
+
+nav a:hover,
+nav.scrolled a:hover,
+.left-nav a:hover {
+    color: #c08e59; /* Adjust the color for the hover state */
+}
+
+.container {
+            text-align: center;
+            margin: 100px;
+            box-sizing: border-box;
+        }
+
+.menu-button:hover {
+    color: #c08e59;
+    transform: scale(1.05);
+}
+
+.right-nav a:hover,
+nav.scrolled .right-nav a:hover {
+    color: #c08e59; /* Adjust the color for the hover state */
+}
+        .container {
+            text-align: center;
+            margin: 100px;
+        }
+
+        h1 {
+            color: #663300;
+        }
+
+        p {
+            color: #996633;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        section {
+            padding: 50px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+
+ 
+
+
+.menu-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+
+        #about-us-section,
+        #contact-section,
+        #gallery-section,
+        #testimonial-section,
+        #events-section {
+            background-color: #f8f8f8;
+        }
+
+        .gallery-section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style for the gallery images */
+
+     main {
+    padding: 0px;
+}
+
+.gallery-section {
+    margin-bottom: 40px;
+}
+
+.gallery-subsection {
+    margin-bottom: 20px;
+}
+
+.gallery h3 {
+    text-align: left;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-left: 0; /* Shift the heading to the extreme left */
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery img {
+    flex: 1;
+    max-width: calc(33.33% - 10px);
+    height: 200px;
+    object-fit: cover;
+}
+
+     .testimonial-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap into the next line */
+    overflow: hidden; /* Hide overflow to ensure images stay within the container */
+ zoom: 1.5;
+}
+
+.testimonial-image {
+    width: 200px; /* Adjust the width of each testimonial image as needed */
+    margin-right: 70px; /* Adjust the margin between images */
+    margin-bottom: 20px; /* Adjust the margin between lines */
+    transform: scale(1.2); /* Adjust the scale factor as needed */
+}
+
+.testimonial-image img {
+    max-width: 100%;
+    border-radius: 0px;
+    animation: move-left 15s linear infinite; /* Adjust animation duration as needed */
+}
+
+
+@keyframes move-left {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+    }
+
+    100% {
+        transform: translateX(-200%); /* Move completely off-screen to the left */
+    }
+}
+.testimonial-images {
+    display: flex;
+    width: fit-content;
+    animation: scrollAnimation linear infinite 15s;
+}
+
+@keyframes scrollAnimation {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+ .events-container {
+            text-align: center;
+        }
+
+        #countdown {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #calendar {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Add your coffee-cup-cursor styles here */
+        .coffee-cup-cursor {
+            width: 50px;
+            height: 50px;
+            background-image: url('path/to/your-coffee-cup-image.png');
+            background-size: cover;
+            position: absolute;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: transparent; 
+    border: none; 
+    box-shadow: none; 
+    z-index: 1000;
+    width: 60%; 
+    max-width: 400px;
+}
+
+.modal-content {
+    position: relative; 
+    text-align: center;
+    padding: 7px;
+    background-color: transparent; 
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: black; 
+    font-size: 28px; 
+    font-weight: bold; 
+    
+}
+
+
+
+
+#modal-countdown-timer {
+    font-size: 18px; 
+}
+
+#upcomingEventsModal img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#menu-section {
+    background-image: url('flat-lay-arrangement-with-sweets.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 1);
+}
+
+.menu-button {
+    background-color: white; /* Set the background color to white */
+    color: #4d331a;
+    padding: 10px 20px;
+    border: 2px solid #c08e59;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: none;
+    font-size: 26px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-family: 'Baskerville', 'Papyrus', serif;
+    font-weight: bold;
+}
+
+.menu-button:hover {
+    color: #c08e59;
+    transform: scale(1.05);
+}
+
+#about-us-section {
+    background-color: #f8f8f8;
+    padding: 50px;
+    margin-top: 0; /* Updated margin-top to 0 */
+    margin-bottom: 0;
+}
+
+#about-us-section h2 {
+    font-family: 'Copperplate', 'Papyrus', fantasy !important;
+    color: #4d331a !important; 
+    font-size: 28px !important;
+    text-align: left; /* Updated to align the text to the left */
+}
+
+#gallery-section {
+    background-color: #f8f8f8;
+    padding: 50px;
+    margin-bottom: 0; /* Updated margin-bottom to 0 */
+}
+
+#testimonial-section {
+    background-color: #f8f8f8;
+    padding: 50px;
+    margin-bottom: 0; /* Updated margin-bottom to 0 */
+}
+
+#events-section {
+    background-color: #f8f8f8;
+    padding: 50px;
+    margin-bottom: 0; /* Updated margin-bottom to 0 */
+}
+
+#contact-section {
+    background-color: #482d17;
+    position: relative;
+    padding: 50px;
+    margin-top: 0; /* Updated margin-top to 0 */
+}
+#contact-section h2 {
+    font-family: 'FlameBold', 'Copperplate', 'Papyrus', fantasy; /* Add your custom font */
+    color: #c08e59; /* Change the color as needed */
+    font-size: 40px; /* Adjust the font size as needed */
+}
+
+
+#menu-section h2,
+
+#gallery-section h2,
+#testimonial-section h2,
+#events-section h2 {
+    font-family: 'Copperplate', 'Papyrus', fantasy !important;
+    color: #4d331a !important; 
+    font-size: 28px !important; 
+}
+
+#menu-section h3,
+#about-us-section h3,
+#contact-section h3,
+#gallery-section h3,
+#testimonial-section h3,
+#events-section h3 {
+    font-family: 'Times New Roman', Times, serif !important;
+    color: #4d331a !important; 
+}
+
+#contact-section {
+   background-color:#482d17;
+    position: relative; /* Ensure relative positioning for absolute positioning of the map */
+}
+
+#contact-section .container {
+    text-align: left; /* Adjust this property to align the content to the left */
+    margin: 100px; /* Increase the margin to increase the size */
+}
+
+
+#map-container {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 400%; /* Adjust the width of the map container */
+    max-width: 800px; /* Set a maximum width for responsiveness */
+    margin: 0 auto;
+    overflow: hidden; /* Ensure content within the container is clipped by rounded corners */
+    border-radius: 15px; /* Add rounded corners, adjust the value as needed */
+}
+
+#map {
+    width: 160%; /* Adjust the width of the map as needed, using 100% of the container */
+    height: 70vh; /* Adjust the height of the map as needed, using 60% of the viewport height */
+}
+
+.container {
+    text-align: center;
+    margin: 0; /* Remove margin to take up the entire width */
+    padding: 0px;
+    height: 100vh; /* Set height to 100% of viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+/* Our Specialities Section Styles */
+/* Add this CSS to your existing styles */
+
+/* Add this CSS to your existing styles */
+
+#specialities-section {
+    background-color: #f8f8f8;
+    padding: 50px;
+    margin-bottom: 0; /* Updated margin-bottom to 0 */
+}
+
+.specialities-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.speciality-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.speciality-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.pop-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.speciality-item:hover {
+    transform: scale(1.1);
+}
+
+.speciality-item:hover .pop-up {
+    display: block;
+}
+
+
+
+ </style>
+
+    <title>Cafe Website</title>
+</head>
+<body>
+
+ <div class="slim-nav">
+    </div>
+  margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+     
+
+
+<!-- Video Background for Home Page -->
+<video id="home-video" autoplay loop muted>
+    <source src="C:\Users\Preesha Sheth\Desktop\cafe\coffee_-_44802 (720p).mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+  <nav>
+    <div class="nav-group left-nav">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about-us-section">About Us</a>
+    </div>
+    <!-- Logo -->
+    <div class="center-nav">
+        <img src="C:\Users\Preesha Sheth\Desktop\cafe\logo (2).png" alt="Cafe Logo" class="logo">
+    </div>
+    <div class="nav-group right-nav">
+        <!-- Move the 'Contact' button to the right side of the logo -->
+        <a href="#contact-section">Contact</a>
+        <a href="#gallery-section">Gallery</a>
+        <a href="#events-section">Events</a>
+    </div>
+</nav>
+
+
+    <!-- Home Section -->
+  <div id="home" class="container">
+    <h1 style="color: #c08e59;">Welcome to KOE!</h1>
+</div>
+
+<!-- Menu Section -->
+<section id="menu-section">
+    <div class="container">
+        <div class="menu-box">
+            <h2>Our Menu</h2>
+            <!-- Menu Button -->
+            <button class="menu-button" onclick="openPDFMenu()">View Menu</button>
+        </div>
+    </div>
+</section>
+
+  <!-- About Us Section -->
+    <section id="about-us-section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>The inception of Kôė was to create a micro scale coffee roasting and food curation experience, with a serene ambience to make the whole experience a complete package for the clientele.
+Creating a coffee roasting cafe involved a passion for coffee, a dedication to quality roasting, and a desire to create a welcoming space for coffee enthusiasts. The journey likely included learning about various coffee beans, perfecting roasting techniques, and curating a menu that showcases the rich flavors of different coffee origins.
+The cafe also emphasises the importance of sustainability and fair trade practices in sourcing its beans, and promoting Indian coffee farmers.</p>
+            <!-- Add additional content about your cafe -->
+        </div>
+    </section>
+
+<!-- Our Specialities Section -->
+<section id="specialities-section">
+    <div class="container">
+        <h2>Our Specialities</h2>
+
+        <!-- Specialities Container -->
+        <div class="specialities-container">
+            <!-- Speciality Item 1 -->
+            <div class="speciality-item" style="z-index: 3;">
+                <img src="C:\Users\Preesha Sheth\Downloads\sourdough-bread-table.jpg" alt="Speciality 1" class="speciality-image">
+                <div class="pop-up" id="pop-up1">
+                    <!-- Content for the first pop-up -->
+                    <p>Speciality 1 Details</p>
+                </div>
+            </div>
+
+            <!-- Speciality Item 2 -->
+            <div class="speciality-item" style="z-index: 2;">
+                <img src="C:\Users\Preesha Sheth\Downloads\2150690825.jpg" alt="Speciality 2" class="speciality-image">
+                <div class="pop-up" id="pop-up2">
+                    <!-- Content for the second pop-up -->
+                    <p>Speciality 2 Details</p>
+                </div>
+            </div>
+
+            <!-- Speciality Item 3 -->
+            <div class="speciality-item" style="z-index: 1;">
+                <img src="path/to/speciality3.jpg" alt="Speciality 3" class="speciality-image">
+                <div class="pop-up" id="pop-up3">
+                    <!-- Content for the third pop-up -->
+                    <p>Speciality 3 Details</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<main>
+        <section id="gallery-section" class="gallery-section">
+            <h2>Our Gallery</h2>
+
+            <!-- Coffee Machine Section -->
+            <div class="gallery-subsection">
+                <h3>Coffee Machine</h3>
+                <div class="gallery">
+                    <img src="C:\Users\Preesha Sheth\Desktop\cafe\cm1.jpg" alt="Coffee Machine 1">
+                    <img src="C:\Users\Preesha Sheth\Desktop\cafe\550206E1-63C4-42D2-BE6C-9C2027F650A0.jpeg" alt="Coffee Machine 2">
+                    <!-- Add more images as needed -->
+                </div>
+            </div>
+
+            <!-- Food Section -->
+            <div class="gallery-subsection">
+                <h3>Food</h3>
+                <div class="gallery">
+                    <img src="C:\Users\Preesha Sheth\Desktop\cafe\77F8C6BC-0CD3-4186-A57F-CCD2CBBE2472.png" alt="Food 1">
+                    <img src="C:\Users\Preesha Sheth\Desktop\cafe\C2CE02E6-DAF2-43A9-916F-43F891E929BB.png" alt="Food 2">
+                    <!-- Add more images as needed -->
+                </div>
+            </div>
+
+            <!-- Ambience Section -->
+            <div class="gallery-subsection">
+                <h3>Ambience</h3>
+                <div class="gallery">
+                    <img src="C:\Users\Preesha Sheth\Desktop\cafe\amb.jpg" alt="Ambience 1">
+                    <img src="C:\Users\Preesha Sheth\Desktop\cafe\amb1.jpg" alt="Ambience 2">
+                    <!-- Add more images as needed -->
+                </div>
+            </div>
+</section>
+    </main>
+
+     <!-- Testimonial Section -->
+   <!-- Testimonial Section -->
+<section id="testimonial-section">
+    <div class="container">
+        <h2>Testimonials</h2>
+        <!-- Flex box for testimonials -->
+        <div class="testimonial-container">
+            <!-- Testimonial Image 1 -->
+            <div class="testimonial-image">
+                <img src="C:\Users\Preesha Sheth\Desktop\cafe\WhatsApp Image 2024-01-04 at 12.28.39 (1).jpeg" alt="Testimonial Image 1">
+            </div>
+
+            <!-- Testimonial Image 2 -->
+            <div class="testimonial-image">
+                <img src="C:\Users\Preesha Sheth\Desktop\cafe\WhatsApp Image 2024-01-04 at 12.28.39.jpeg" alt="Testimonial Image 2">
+            </div>
+ <div class="testimonial-image">
+                <img src="C:\Users\Preesha Sheth\Desktop\cafe\WhatsApp Image 2024-01-04 at 12.28.43.jpeg" alt="Testimonial Image 1">
+            </div>
+
+            <!-- Testimonial Image 2 -->
+            <div class="testimonial-image">
+                <img src="C:\Users\Preesha Sheth\Desktop\cafe\WhatsApp Image 2024-01-04 at 12.28.46.jpeg" alt="Testimonial Image 2">
+            </div>
+ <div class="testimonial-image">
+                <img src="C:\Users\Preesha Sheth\Desktop\cafe\WhatsApp Image 2024-01-04 at 12.28.48.jpeg" alt="Testimonial Image 1">
+            </div>
+
+            <!-- Testimonial Image 2 -->
+            <div class="testimonial-image">
+                <img src="C:\Users\Preesha Sheth\Desktop\cafe\WhatsApp Image 2024-01-04 at 12.28.49.jpeg" alt="Testimonial Image 2">
+            </div>
+ <div class="testimonial-image">
+                <img src="C:\Users\Preesha Sheth\Desktop\cafe\WhatsApp Image 2024-01-04 at 12.28.50.jpeg" alt="Testimonial Image 1">
+            </div>
+
+            <!-- Testimonial Image 2 -->
+            <div class="testimonial-image">
+                <img src="C:\Users\Preesha Sheth\Desktop\cafe\WhatsApp Image 2024-01-04 at 12.28.52 (1).jpeg" alt="Testimonial Image 2">
+            </div>
+<div class="testimonial-image">
+                <img src="C:\Users\Preesha Sheth\Desktop\cafe\WhatsApp Image 2024-01-04 at 12.28.45.jpeg" alt="Testimonial Image 2">
+            </div>
+
+
+            <!-- Add more testimonial images as needed -->
+        </div>
+    </div>
+</section>
+
+
+   <!-- Events Section -->
+    <section id="events-section">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+
+            <!-- Countdown Timer Container -->
+            <div class="countdown-container" id="countdown">
+                <h3>Countdown to the Event:</h3>
+                <div id="countdown-timer"></div>
+            </div>
+
+            <!-- Calendar Container -->
+            <div id="calendar">
+                <!-- Replace 'YOUR_GOOGLE_CALENDAR_EMBED_LINK' with your Google Calendar embed link -->
+                <iframe src="https://calendar.google.com/calendar/embed?src=28730fbe8eb8c5ff062f8e03c43d2bf283fee3b6c13ecc3aa0497e687c93f896%40group.calendar.google.com&ctz=Asia%2FKolkata" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+    </section>
+ 
+<!-- Contact Section -->
+<section id="contact-section">
+    <div class="container">
+        <h2>Say Hello to us!</h2>
+       
+         <p> 205, International Finance Centre, VIP Road, opp.<br>
+ Fire Station, Vesu, Surat, Gujarat 395007</p>
+    </div>
+
+    <!-- Map Container -->
+    <div id="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.2735436899716!2d72.77846137525975!3d21.141509580536162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be05327ccb9c45f%3A0xe73ce99228e97293!2sKOE%20-%20The%20Kafe!5e0!3m2!1sen!2sin!4v1704186645782!5m2!1sen!2sin" width="990" height="540" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+
+   <div class="coffee-cup-cursor"></div>
+<div class="countdown-container" id="countdown">
+    
+    <div id="countdown-timer"></div>
+</div>
+
+<div id="upcomingEventsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <!-- Content for Upcoming Events -->
+        <div id="modal-countdown-timer"></div>
+        <!-- Add the image source (replace 'path/to/image.jpg' with your actual image path) -->
+        <img src="C:\Users\Preesha Sheth\AppData\Local\Temp\Temp1_crop to cup.zip\2.png" alt="Event Image">
+    </div>
+</div>
+
+<div class="bottom-nav">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about-us-section">About Us</a>
+        <a href="#contact-section">Contact</a>
+        <a href="#gallery-section">Gallery</a>
+        <a href="#events-section">Events</a>
+        <div class="instagram-handle">Follow us on Instagram: @your_instagram_handle</div>
+    </div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+        const homeVideo = document.getElementById('home-video');
+
+        // Pause the video when leaving the home page
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) {
+                homeVideo.pause();
+            } else {
+                homeVideo.play();
+            }
+        });
+
+        // Pause the video before leaving the page
+        window.addEventListener('beforeunload', function () {
+            homeVideo.pause();
+        });
+    });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const slimNav = document.querySelector('.slim-nav');
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+            slimNav.classList.add('scrolled', 'slim-scroll');
+        } else {
+            slimNav.classList.remove('scrolled', 'slim-scroll');
+        }
+    });
+});
+
+
+
+    // Function to open the PDF menu
+    function openPDFMenu() {
+        // Replace 'path/to/menu.pdf' with the actual path to your PDF menu
+        window.open('path/to/menu.pdf', '_blank');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const coffeeCupCursor = document.createElement('div');
+        coffeeCupCursor.className = 'coffee-cup-cursor';
+        document.body.appendChild(coffeeCupCursor);
+
+        document.addEventListener('mousemove', function (e) {
+            coffeeCupCursor.style.left = e.pageX + 'px';
+            coffeeCupCursor.style.top = e.pageY + 'px';
+        });
+    });
+
+    // Countdown Timer
+    const countdownDate = new Date('2024-01-10T00:00:00').getTime();
+    const countdownElement = document.getElementById('countdown-timer');
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+
+        if (distance < 0) {
+            countdownElement.innerHTML = 'Event has started!';
+            // Call the openModal function when the countdown reaches zero
+            openModal();
+        }
+    }
+
+    setInterval(updateCountdown, 1000);
+
+    // Calendar Resize
+    window.addEventListener('resize', resizeCalendar);
+    document.addEventListener('DOMContentLoaded', resizeCalendar);
+
+    function resizeCalendar() {
+        const calendar = document.getElementById('calendar');
+        calendar.style.height = calendar.offsetWidth * 0.75 + 'px'; // Adjust the aspect ratio as needed
+    }
+
+    function openModal() {
+        const modal = document.getElementById('upcomingEventsModal');
+        modal.style.display = 'block';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        const modal = document.getElementById('upcomingEventsModal');
+        modal.style.display = 'none';
+        // Ensure that the modal content is cleared to terminate the video or any other content inside
+        const modalContent = modal.querySelector('.modal-content');
+        modalContent.innerHTML = '';
+    }
+
+    // Attach click event listener to the close button
+    document.addEventListener('DOMContentLoaded', function () {
+        const closeButton = document.querySelector('.close');
+        if (closeButton) {
+            closeButton.addEventListener('click', closeModal);
+        }
+    });
+
+    // Function to add a scrolled class to the navigation bar on scroll
+    document.addEventListener('DOMContentLoaded', function () {
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    });
+
+document.addEventListener('DOMContentLoaded', function () {
+    openModal();
+});
+document.addEventListener('DOMContentLoaded', function () {
+    // Get the testimonial images container
+    const testimonialImagesContainer = document.querySelector('.testimonial-images');
+
+    // Clone the testimonial images
+    const testimonialImages = testimonialImagesContainer.innerHTML;
+
+    // Set the animation duration (adjust as needed)
+    const animationDuration = 15; // seconds
+
+    // Set the animation keyframes
+    const keyframes = [
+        { transform: 'translateX(0%)' },
+        { transform: 'translateX(-100%)' },
+    ];
+
+    // Set the animation options
+    const options = {
+        duration: animationDuration * 1000, // Convert seconds to milliseconds
+        iterations: Infinity, // Infinite loop
+        easing: 'linear',
+    };
+
+    // Apply the animation
+    testimonialImagesContainer.innerHTML += testimonialImages; // Append additional copies
+    const animation = testimonialImagesContainer.animate(keyframes, options);
+
+    // Pause and restart animation on mouseover and mouseout
+    testimonialImagesContainer.addEventListener('mouseover', function () {
+        animation.pause();
+    });
+
+    testimonialImagesContainer.addEventListener('mouseout', function () {
+        animation.play();
+    });
+});
+
+// Function to open the speciality popup
+function openSpecialityPopup(index) {
+    const popup = document.getElementById(`speciality-popup-${index}`);
+    const body = document.querySelector('body');
+    body.style.filter = 'blur(5px)';
+    popup.style.display = 'block';
+}
+
+// Function to close the speciality popup
+function closeSpecialityPopup(index) {
+    const popup = document.getElementById(`speciality-popup-${index}`);
+    const body = document.querySelector('body');
+    body.style.filter = 'none';
+    popup.style.display = 'none';
+}
+
+// Close popups when clicking outside
+window.addEventListener('click', function (event) {
+    const popups = document.querySelectorAll('.speciality-popup');
+    popups.forEach(function (popup) {
+        if (event.target === popup) {
+            const body = document.querySelector('body');
+            body.style.filter = 'none';
+            popup.style.display = 'none';
+        }
+    });
+});
+
+// Close popups on 'Esc' key press
+window.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        const popups = document.querySelectorAll('.speciality-popup');
+        popups.forEach(function (popup) {
+            const body = document.querySelector('body');
+            body.style.filter = 'none';
+            popup.style.display = 'none';
+        });
+    }
+});
+
+
+</script>
+
+</body>
+</html>
